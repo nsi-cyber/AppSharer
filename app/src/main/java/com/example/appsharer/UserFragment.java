@@ -26,25 +26,15 @@ public class UserFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
     List<App> appu = new ArrayList<>();
     RecyclerView recyclerview;
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
     public UserFragment() {
     }
 
-    public static SystemFragment newInstance(String param1, String param2) {
-        SystemFragment fragment = new SystemFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -53,10 +43,6 @@ public class UserFragment extends Fragment {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
 
@@ -76,7 +62,7 @@ public class UserFragment extends Fragment {
                 }
                 Drawable icon = packageManager.getApplicationIcon(packageInfo);
                 String apkPath = packageInfo.sourceDir;
-                appu.add(new App(name, apkPath, icon,packageInfo.packageName));
+                appu.add(new App(name, apkPath, icon, packageInfo.packageName));
             }
         }
 

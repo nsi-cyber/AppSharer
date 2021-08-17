@@ -1,0 +1,19 @@
+com/example/appsharer/AppAdapter.java
+ com.example.appsharer.AppAdapter
+ com.example.appsharer.AppAdapter$1
+ com.example.appsharer.AppAdapter$AppViewHolder
+com/example/appsharer/MainActivity.java
+ com.example.appsharer.MainActivity
+ com.example.appsharer.MainActivity$1
+com/example/appsharer/BuildConfig.java
+ com.example.appsharer.BuildConfig
+com/example/appsharer/App.java
+ com.example.appsharer.App
+com/example/appsharer/UserFragment.java
+ com.example.appsharer.UserFragment
+ com.example.appsharer.UserFragment$1
+com/example/appsharer/SystemFragment.java
+ com.example.appsharer.SystemFragment
+ com.example.appsharer.SystemFragment$1
+com/example/appsharer/PagerAdapter.java
+ com.example.appsharer.PagerAdapter
