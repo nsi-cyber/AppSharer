@@ -35,6 +35,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
     public void onBindViewHolder(@NonNull AppViewHolder holder, int position) {
         holder.appName.setText(apps.get(position).getAppName());
         holder.appIcon.setImageDrawable(apps.get(position).getIcon());
+        holder.appPackage.setText(apps.get(position).getAppPackage());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,13 +63,14 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
     public static class AppViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         ImageView appIcon;
-        TextView appName;
+        TextView appName,appPackage;
 
         public AppViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.app_row);
             appIcon = itemView.findViewById(R.id.app_icon);
             appName = itemView.findViewById(R.id.app_name);
+            appPackage=itemView.findViewById(R.id.app_package);
         }
     }
 }

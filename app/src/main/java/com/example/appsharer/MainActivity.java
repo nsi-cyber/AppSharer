@@ -2,51 +2,66 @@ package com.example.appsharer;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<App> apps = new ArrayList<>();
-    RecyclerView recyclerview;
 
+    PagerAdapter pagerAdapter;
+    ViewPager viewPager;
+
+    TabLayout tabLayout;
+    TabItem SystemApps, UserApps;
+    int systemappscount = 0;
+    int userappscount = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-        recyclerview = findViewById(R.id.app_list);
-        PackageManager packageManager = getApplicationContext().getPackageManager();
-        List<ApplicationInfo> packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
-        for (ApplicationInfo packageInfo : packages) {
-            String name = String.valueOf(packageManager.getApplicationLabel(packageInfo));
-            if (name.isEmpty()) {
-                name = packageInfo.packageName;
-            }
-            Drawable icon = packageManager.getApplicationIcon(packageInfo);
-            String apkPath = packageInfo.sourceDir;
-            apps.add(new App(name, apkPath, icon));
-        }
-
-        Collections.sort(apps, new Comparator<App>() {
+        tabLayout = findViewById(R.id.tabLayout);
+        SystemApps = findViewById(R.id.appst);
+        UserApps = findViewById(R.id.apput);
+        viewPager = findViewById(R.id.viewPager);
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public int compare(App app, App appx) {
-                return app.getAppName().toLowerCase().compareTo(appx.getAppName().toLowerCase());
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
-        LinearLayoutManager LinearLayoutManager = new LinearLayoutManager(this);
-        recyclerview.setLayoutManager(LinearLayoutManager);
-        recyclerview.setHasFixedSize(true);
-        AppAdapter appAdapter = new AppAdapter(this, apps);
-        recyclerview.setAdapter(appAdapter);
 
+
+
+        PackageManager packageManager = getApplicationContext().getPackageManager();
+        List<ApplicationInfo> packages = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
+        for (ApplicationInfo packageInfo : packages) {
+            if ((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                userappscount++;
+            } else
+                systemappscount++;
+
+        }
+        tabLayout.getTabAt(0).setText("System Apps (" + systemappscount + ")");
+        tabLayout.getTabAt(1).setText("User Apps (" + userappscount + ")");
     }
 }
