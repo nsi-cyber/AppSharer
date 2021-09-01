@@ -36,6 +36,10 @@
         "source": "C:\\Users\\nsi\\AndroidStudioProjects\\AppSharer\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\nsi\\AndroidStudioProjects\\AppSharer\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_http.xml.flat",
+        "source": "C:\\Users\\nsi\\AndroidStudioProjects\\AppSharer\\app\\src\\main\\res\\layout\\fragment_http.xml"
+    },
+    {
         "merged": "C:\\Users\\nsi\\AndroidStudioProjects\\AppSharer\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_applist.xml.flat",
         "source": "C:\\Users\\nsi\\AndroidStudioProjects\\AppSharer\\app\\src\\main\\res\\layout\\fragment_applist.xml"
     },

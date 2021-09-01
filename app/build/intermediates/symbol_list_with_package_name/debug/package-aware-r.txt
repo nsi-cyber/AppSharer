@@ -1929,6 +1929,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id button
+id button2
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -1987,6 +1989,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id download_info
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2036,6 +2039,7 @@ id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id http
 id icon
 id icon_group
 id ifRoom
@@ -2187,6 +2191,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id server_info
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2386,6 +2391,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_applist
+layout fragment_http
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

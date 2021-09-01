@@ -3,6 +3,7 @@ package com.example.appsharer;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.UserManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -10,7 +11,28 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import org.apache.ftpserver.FtpServer;
+import org.apache.ftpserver.FtpServerFactory;
+import org.apache.ftpserver.ftplet.Authority;
+import org.apache.ftpserver.ftplet.FtpException;
+import org.apache.ftpserver.ftplet.FtpReply;
+import org.apache.ftpserver.ftplet.FtpRequest;
+import org.apache.ftpserver.ftplet.FtpSession;
+import org.apache.ftpserver.ftplet.Ftplet;
+import org.apache.ftpserver.ftplet.FtpletContext;
+import org.apache.ftpserver.ftplet.FtpletResult;
+import org.apache.ftpserver.listener.ListenerFactory;
+import org.apache.ftpserver.usermanager.PasswordEncryptor;
+import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
+import org.apache.ftpserver.usermanager.impl.BaseUser;
+import org.apache.ftpserver.usermanager.impl.WritePermission;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
 
     TabLayout tabLayout;
-    TabItem SystemApps, UserApps;
+    TabItem SystemApps, UserApps,HttpS;
     int systemappscount = 0;
     int userappscount = 0;
     @Override
@@ -29,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         SystemApps = findViewById(R.id.appst);
         UserApps = findViewById(R.id.apput);
+        HttpS= findViewById(R.id.http);
         viewPager = findViewById(R.id.viewPager);
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
@@ -63,5 +86,31 @@ public class MainActivity extends AppCompatActivity {
         }
         tabLayout.getTabAt(0).setText("System Apps (" + systemappscount + ")");
         tabLayout.getTabAt(1).setText("User Apps (" + userappscount + ")");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

@@ -22,6 +22,8 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new SystemFragment();
             case 1:
                 return new UserFragment();
+            case 2:
+                return new HttpFragment();
             default:
                 return null;
         }
