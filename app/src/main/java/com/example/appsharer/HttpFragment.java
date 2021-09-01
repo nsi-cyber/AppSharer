@@ -67,7 +67,7 @@ public class HttpFragment extends Fragment implements OnDataClickListener{
         View root = inflater.inflate(R.layout.fragment_http, container, false);
 
         TextView tv = (TextView) root.findViewById(R.id.server_info);
-        StringBuilder serverInfo = new StringBuilder().append("HTTP Sever Address: http://").
+        StringBuilder serverInfo = new StringBuilder().append("HTTP Server Address: http://").
                 append(getWifiIpAddress()).append(":8082\n");
         tv.setText(serverInfo);
 
@@ -106,11 +106,16 @@ public class HttpFragment extends Fragment implements OnDataClickListener{
 
         b2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if(b2.getText().equals("Start With all apps")){
+                    b2.setText("Disconnect server");
+
                 mHttpd = new HttpServer(8082,appu);
                 try {
                     mHttpd.start();
                 } catch (IOException e) {
                     e.printStackTrace();
+                }}  else{
+                    System.exit(1);
                 }
             }
         });

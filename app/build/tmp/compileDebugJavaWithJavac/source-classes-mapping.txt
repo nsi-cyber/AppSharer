@@ -4,8 +4,8 @@ com/example/appsharer/WifiShareAdapter.java
  com.example.appsharer.WifiShareAdapter
  com.example.appsharer.WifiShareAdapter$1
  com.example.appsharer.WifiShareAdapter$AppViewHolder
-com/example/appsharer/AndroidWebServer.java
- com.example.appsharer.AndroidWebServer
+com/example/appsharer/BuildConfig.java
+ com.example.appsharer.BuildConfig
 com/example/appsharer/AppAdapter.java
  com.example.appsharer.AppAdapter
  com.example.appsharer.AppAdapter$1
@@ -13,24 +13,23 @@ com/example/appsharer/AppAdapter.java
 com/example/appsharer/UserFragment.java
  com.example.appsharer.UserFragment
  com.example.appsharer.UserFragment$1
-com/example/appsharer/MainActivity.java
- com.example.appsharer.MainActivity
- com.example.appsharer.MainActivity$1
-com/example/appsharer/SystemFragment.java
- com.example.appsharer.SystemFragment
- com.example.appsharer.SystemFragment$1
-com/example/appsharer/App.java
- com.example.appsharer.App
-com/example/appsharer/PagerAdapter.java
- com.example.appsharer.PagerAdapter
-com/example/appsharer/BuildConfig.java
- com.example.appsharer.BuildConfig
 com/example/appsharer/HttpServer.java
  com.example.appsharer.HttpServer
  com.example.appsharer.HttpServer$1
  com.example.appsharer.HttpServer$DownloadResponse
  com.example.appsharer.HttpServer$OnStatusUpdateListener
+com/example/appsharer/SystemFragment.java
+ com.example.appsharer.SystemFragment
+ com.example.appsharer.SystemFragment$1
+com/example/appsharer/App.java
+ com.example.appsharer.App
+com/example/appsharer/MainActivity.java
+ com.example.appsharer.MainActivity
+ com.example.appsharer.MainActivity$1
+com/example/appsharer/PagerAdapter.java
+ com.example.appsharer.PagerAdapter
 com/example/appsharer/HttpFragment.java
  com.example.appsharer.HttpFragment
  com.example.appsharer.HttpFragment$1
  com.example.appsharer.HttpFragment$2
+ com.example.appsharer.HttpFragment$3
